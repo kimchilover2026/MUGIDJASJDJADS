@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11130f">
+<title>Wano Kuni — Straw Hat Wanted Board</title>
+<style>
+:root{--ink:#17170f;--paper:#e7d3a5;--paper2:#c8ad78;--red:#a62b24;--gold:#d4ae58;--green:#557348;--night:#10130f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:#f4ead1;background:#10130f;font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:linear-gradient(180deg,#141913 0%,#293126 40%,#171b15 100%)}
+.sky{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 50% 12%,#c9a85c22,transparent 42%)}
+.moon{position:absolute;top:7%;right:13%;width:100px;height:100px;border-radius:50%;background:#e6c87e;box-shadow:0 0 55px #e8c97940;opacity:.6}
+.mountain{position:absolute;bottom:0;width:0;height:0;border-left:35vw solid transparent;border-right:35vw solid transparent;border-bottom:48vh solid #20291f;opacity:.8}
+.mountain.one{left:-12%;border-bottom-color:#293629}.mountain.two{right:-18%;border-bottom-width:35vh;border-left-width:42vw;border-right-width:42vw;border-bottom-color:#1a241b}
+.pagoda{position:absolute;bottom:10%;left:8%;width:160px;height:170px;opacity:.5}
+.pagoda .roof{position:absolute;left:-18px;width:196px;height:24px;background:#171711;clip-path:polygon(0 100%,12% 45%,36% 15%,50% 0,64% 15%,88% 45%,100% 100%,78% 82%,50% 68%,22% 82%)}
+.pagoda .roof.r1{top:22px}.pagoda .roof.r2{top:70px;transform:scale(.82);left:-2px}.pagoda .roof.r3{top:118px;transform:scale(.64);left:18px}
+.pagoda .body{position:absolute;top:38px;bottom:0;left:30px;right:30px;background:#151711;border:5px solid #4a3320}
+.lantern{position:absolute;top:24%;left:12%;width:25px;height:38px;background:#b52e23;border:2px solid #d8b86e;box-shadow:0 0 25px #bd302955}
+.lantern:before,.lantern:after{content:"";position:absolute;left:7px;width:7px;height:8px;background:#d8b86e}.lantern:before{top:-9px}.lantern:after{bottom:-9px}
+header{text-align:center;padding:34px 18px 0}
+.kicker{font:700 .7rem/1.5 Arial,sans-serif;letter-spacing:.38em;text-transform:uppercase;color:#d8b86e}
+h1{font-size:clamp(2.6rem,7vw,5.8rem);line-height:.95;margin:14px 0 12px;text-transform:uppercase;letter-spacing:.05em;text-shadow:0 5px 0 #0007,0 0 35px #d3a64a22}
+.subtitle{color:#d8c9a6;font-style:italic;font-size:clamp(.9rem,2vw,1.15rem);margin:0}
+main{width:min(100% - 28px,1100px);margin:0 auto}
+.hero{min-height:65vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px 0 50px;position:relative}
+.hero-copy{max-width:620px;color:#d8cfb7;line-height:1.6;margin:22px auto 26px;font-size:1.04rem}
+.jolly-button{width:clamp(180px,27vw,280px);aspect-ratio:1;border:0;background:transparent;cursor:pointer;position:relative;display:grid;place-items:center;transition:transform .25s;filter:drop-shadow(0 12px 18px #0009)}
+.jolly-button:hover{transform:translateY(-5px) rotate(-2deg)}
+.jolly-button:focus-visible{outline:3px solid var(--gold);outline-offset:8px;border-radius:50%}
+.jolly-disc{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 50% 50%,#e5d3a8 0 49%,#8e2220 50% 53%,#e5d3a8 54% 60%,#24251b 61% 64%,#d5b66d 65% 66%,#151710 67%);border:4px solid #d3b66f;box-shadow:inset 0 0 0 8px #171811,inset 0 0 0 10px #b88e46;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#1b1b14;position:relative}
+.jolly-disc:before{content:"☠";font-family:Arial,sans-serif;font-size:clamp(4.2rem,10vw,7.2rem);line-height:1;filter:drop-shadow(2px 2px #a52b23)}
+.crossbones{font-size:clamp(2rem,5vw,3rem);letter-spacing:.08em;margin-top:-5px}
+.jolly-caption{font:900 .62rem Arial,sans-serif;letter-spacing:.2em;margin-top:8px;color:#a52b23}
+.click-hint{font:700 .68rem Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#d6bb75;margin-top:20px;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.5}}
+.music{position:fixed;right:16px;bottom:16px;z-index:10;width:min(310px,calc(100vw - 32px));padding:10px;background:#10120feF;border:1px solid #bda25a66;box-shadow:0 10px 35px #0008;border-radius:9px;backdrop-filter:blur(8px)}
+.music-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.music-icon{width:32px;height:32px;display:grid;place-items:center;background:#a52b23;color:#f2dba0;border:1px solid #d4ae58;font-size:1.15rem}
+.music-title{font:bold .77rem Arial,sans-serif;letter-spacing:.03em}.music-sub{font: .65rem Arial,sans-serif;color:#bcb39c;margin-top:3px}
+.spotify-frame{height:80px;overflow:hidden;border-radius:6px}
+.spotify-frame iframe{display:block;width:100%;height:80px;border:0}
+.music-note{font: .61rem/1.4 Arial,sans-serif;color:#aaa18c;margin:7px 2px 0}
+.overlay{position:fixed;inset:0;background:#070906eF;z-index:30;display:none;align-items:center;justify-content:center;padding:20px;overflow:auto}
+.overlay.open{display:flex}
+.board{position:relative;width:min(1100px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#30271a;border:8px solid #684626;box-shadow:0 0 0 2px #c8a15a,0 25px 80px #000d;padding:clamp(14px,3vw,30px);background-image:repeating-linear-gradient(90deg,#00000008 0 3px,transparent 3px 34px),linear-gradient(130deg,#49331f,#211b14)}
+.board-top{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:2px solid #d2b16d;padding-bottom:14px;margin-bottom:20px}
+.board-top h2{font-size:clamp(1.4rem,4vw,2.6rem);margin:0;color:#f0dcae;text-transform:uppercase;letter-spacing:.07em}
+.board-top p{font: .7rem Arial,sans-serif;letter-spacing:.12em;color:#c7b48b;margin:5px 0 0}
+.close{flex-shrink:0;border:1px solid #d8bc79;background:#211b14;color:#f3d99b;width:42px;height:42px;font-size:1.6rem;cursor:pointer}
+.posters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.poster{position:relative;min-width:0;aspect-ratio:.69;background:#e4d2a7;color:#292216;padding:9px 8px 10px;border:1px solid #f1e1b8;box-shadow:2px 5px 9px #0008;transform:rotate(var(--tilt,0deg));display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden}
+.poster:before{content:"";position:absolute;inset:5px;border:1px solid #6b5030;pointer-events:none}
+.poster .wanted{font:900 clamp(.75rem,1.7vw,1.35rem)/1 Arial,sans-serif;letter-spacing:.06em;border-bottom:2px solid #3d3021;width:100%;padding:4px 0 5px}
+.portrait{width:100%;height:45%;min-height:70px;margin:7px 0;background:linear-gradient(135deg,#c5b184,#e7d9b7);border:1px solid #77603b;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.portrait svg{width:100%;height:100%;max-height:145px}
+.poster .name{font:900 clamp(.62rem,1.3vw,1rem)/1.1 Arial,sans-serif;text-transform:uppercase;margin:4px 0 3px}
+.poster .bounty-label{font:900 .48rem Arial,sans-serif;letter-spacing:.16em}
+.poster .bounty{font:900 clamp(.66rem,1.35vw,1.02rem)/1.2 Arial,sans-serif;margin-top:3px;white-space:nowrap}
+.poster .berry{font: .48rem Arial,sans-serif;margin-top:auto;letter-spacing:.1em}
+.board-foot{font: .65rem Arial,sans-serif;color:#c9b48a;text-align:center;margin-top:18px;letter-spacing:.12em}
+@media(max-width:800px){.posters{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{min-height:60vh}.music{width:245px}}
+@media(max-width:480px){header{padding-top:25px}.posters{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.poster .portrait{height:42%;min-height:65px}.board{padding:12px;border-width:5px}.board-top{align-items:flex-start}.music{right:9px;bottom:9px;width:210px;padding:8px}.music-head{margin-bottom:6px}.music-icon{width:27px;height:27px}.music-title{font-size:.68rem}.spotify-frame,.spotify-frame iframe{height:80px}.hero-copy{padding:0 12px;margin-top:15px}}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"><div class="moon"></div><div class="mountain one"></div><div class="mountain two"></div><div class="pagoda"><div class="roof r1"></div><div class="body"></div><div class="roof r2"></div><div class="roof r3"></div></div><div class="lantern"></div></div>
+<header>
+  <div class="kicker">Grand Line · País de Wano</div>
+  <h1>Wano Kuni</h1>
+  <p class="subtitle">El camino del espadachín · Roronoa Zoro</p>
+</header>
+<main>
+  <section class="hero">
+    <p class="hero-copy">Las llamas de Onigashima iluminan el cielo. La tripulación del Sombrero de Paja sigue navegando hacia el One Piece. Tocá el emblema para descubrir sus recompensas.</p>
+    <button class="jolly-button" id="openBoard" aria-label="Abrir los wanted de los Sombrero de Paja">
+      <span class="jolly-disc"><span>☠</span><span class="crossbones">⚔</span><span class="jolly-caption">MUGIWARA</span></span>
+    </button>
+    <div class="click-hint">Tocá el jolly roger · Abrir wanted</div>
+  </section>
+</main>
+<aside class="music" aria-label="Reproductor de música">
+  <div class="music-head"><div class="music-icon">♫</div><div><div class="music-title">OVERTAKEN · EPIC VERSION</div><div class="music-sub">Samuel Kim · One Piece</div></div></div>
+  <div class="spotify-frame">
+    <iframe title="Spotify: Overtaken Epic Version" src="https://open.spotify.com/embed/track/0R0EnWSJ1bqeWXDdc7Vt7x?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="music-note">Si no comienza automáticamente, tocá play en Spotify.</div>
+</aside>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="boardTitle">
+  <section class="board">
+    <div class="board-top"><div><h2 id="boardTitle">WANTED — Mugiwara</h2><p>DEAD OR ALIVE · STRAW HAT PIRATES</p></div><button class="close" id="closeBoard" aria-label="Cerrar tablón">×</button></div>
+    <div class="posters" id="posters"></div>
+    <div class="board-foot">MARINE HEADQUARTERS · RECOMPENSAS POST-WANO</div>
+  </section>
+</div>
+<script>
+const crew = [
+  {name:'Monkey D. Luffy', bounty:'3,000,000,000', role:'CAPTAIN', color:'#b98748', hair:'#171711', face:'#d3a16f', hat:true, scar:true},
+  {name:'Roronoa Zoro', bounty:'1,111,000,000', role:'SWORDSMAN', color:'#6d8a55', hair:'#63864e', face:'#cfa477', bandana:true, swords:true},
+  {name:'Jinbe', bounty:'1,100,000,000', role:'HELMAN', color:'#487f9b', hair:'#243f55', face:'#6f9eaf'},
+  {name:'Sanji', bounty:'1,032,000,000', role:'COOK', color:'#b6a36a', hair:'#d8c45c', face:'#e0b88e', suit:true},
+  {name:'Nico Robin', bounty:'930,000,000', role:'ARCHAEOLOGIST', color:'#715c86', hair:'#28242e', face:'#dfb28f'},
+  {name:'Usopp', bounty:'500,000,000', role:'SNIPER', color:'#b9854c', hair:'#7d4b27', face:'#d8a878', nose:true},
+  {name:'Franky', bounty:'394,000,000', role:'SHIPWRIGHT', color:'#4d9a9b', hair:'#4a9fb0', face:'#d5a47b', shades:true},
+  {name:'Brook', bounty:'383,000,000', role:'MUSICIAN', color:'#b6b5ad', hair:'#eee2c3', face:'#f0e4c6', skull:true},
+  {name:'Nami', bounty:'366,000,000', role:'NAVIGATOR', color:'#ce8257', hair:'#e89b32', face:'#e6b58d'},
+  {name:'Tony Tony Chopper', bounty:'1,000', role:'DOCTOR', color:'#c98d76', hair:'#9b6a43', face:'#d6b18d', hat:true, chopper:true}
+];
+function portraitSVG(c){
+ if(c.skull) return `<svg viewBox="0 0 120 140" aria-hidden="true"><rect width="120" height="140" fill="${c.color}" opacity=".15"/><path d="M25 45 Q22 9 60 10 Q98 9 95 45 L90 86 Q82 103 60 102 Q38 103 30 86Z" fill="#f0e7ce" stroke="#493d2b" stroke-width="3"/><ellipse cx="43" cy="59" rx="12" ry="14" fill="#24221c"/><ellipse cx="77" cy="59" rx="12" ry="14" fill="#24221c"/><path d="M60 69 l-7 14 14 0Z" fill="#24221c"/><path d="M40 88 L80 88 M45 99 v9 M57 101 v9 M69 101 v9" stroke="#24221c" stroke-width="4"/><path d="M24 27 Q60 -5 96 27" fill="none" stroke="#493d2b" stroke-width="5"/></svg>`;
+ if(c.chopper) return `<svg viewBox="0 0 120 140" aria-hidden="true"><rect width="120" height="140" fill="${c.color}" opacity=".18"/><path d="M30 48 Q15 18 30 17 Q46 20 47 43 M73 43 Q80 16 96 20 Q107 35 88 52" fill="#b9825c" stroke="#493d2b" stroke-width="3"/><ellipse cx="60" cy="68" rx="34" ry="36" fill="#d9ad85" stroke="#493d2b" stroke-width="3"/><path d="M25 44 Q60 23 95 44 L88 53 L31 53Z" fill="#b83b32" stroke="#493d2b" stroke-width="3"/><circle cx="47" cy="67" r="5" fill="#27241e"/><circle cx="73" cy="67" r="5" fill="#27241e"/><ellipse cx="60" cy="80" rx="5" ry="4" fill="#9d5542"/><path d="M48 90 Q60 98 72 90" fill="none" stroke="#493d2b" stroke-width="3"/></svg>`;
+ let hair = c.hair || '#2b261d', face = c.face || '#d5ad86';
+ return `<svg viewBox="0 0 120 140" aria-hidden="true"><rect width="120" height="140" fill="${c.color}" opacity=".16"/><path d="M23 140 L29 105 Q34 91 60 90 Q86 91 91 105 L97 140Z" fill="${c.suit?'#24242b':'#4a4b3d'}" stroke="#493d2b" stroke-width="2"/><path d="M29 52 Q24 18 60 16 Q96 18 91 52 L85 80 Q78 99 60 100 Q42 99 35 80Z" fill="${face}" stroke="#493d2b" stroke-width="2.5"/><path d="M27 56 Q14 19 48 13 Q80 0 94 28 L91 53 Q76 37 64 31 Q48 47 27 56Z" fill="${hair}" stroke="#493d2b" stroke-width="3"/><path d="M43 62 l12 2 M66 64 l12 -2" stroke="#30271d" stroke-width="3" stroke-linecap="round"/><path d="M51 81 Q60 86 69 81" fill="none" stroke="#65422f" stroke-width="2"/><path d="M42 72 L51 72 M69 72 L78 72" stroke="#34271f" stroke-width="2"/>${c.hat?'<path d="M14 34 Q60 17 106 34 L99 44 Q60 34 21 44Z" fill="#c9a14c" stroke="#493d2b" stroke-width="3"/>':''}${c.bandana?'<path d="M25 43 Q60 33 92 43 L89 51 Q60 43 29 52Z" fill="#a62b24" stroke="#493d2b" stroke-width="2"/>':''}${c.swords?'<path d="M15 105 L99 15 M22 113 L106 23" stroke="#d9d2bc" stroke-width="3"/><path d="M22 94 L35 106 M29 87 L42 99" stroke="#9a372d" stroke-width="5"/>':''}${c.nose?'<path d="M56 68 L62 86 L56 89" fill="none" stroke="#8c5b39" stroke-width="3"/>':''}${c.shades?'<rect x="29" y="57" width="25" height="12" rx="4" fill="#1c2427"/><rect x="66" y="57" width="25" height="12" rx="4" fill="#1c2427"/><path d="M54 61 H66" stroke="#1c2427" stroke-width="4"/>':''}</svg>`;
+}
+const posters = document.getElementById('posters');
+crew.forEach((c,i)=>{
+ const article=document.createElement('article');
+ article.className='poster'; article.style.setProperty('--tilt', `${[-1.2,.8,-.5,1.1,-.7,.6,-1,.5,-.4,.7][i]}deg`);
+ article.innerHTML=`<div class="wanted">WANTED</div><div class="portrait">${portraitSVG(c)}</div><div class="name">${c.name}</div><div class="bounty-label">DEAD OR ALIVE</div><div class="bounty">฿ ${c.bounty}</div><div class="berry">${c.role} · MARINE</div>`;
+ posters.appendChild(article);
+});
+const overlay=document.getElementById('overlay');
+const openButton=document.getElementById('openBoard');
+const closeButton=document.getElementById('closeBoard');
+function openBoard(){overlay.classList.add('open');document.body.style.overflow='hidden';closeButton.focus();}
+function closeBoard(){overlay.classList.remove('open');document.body.style.overflow='';openButton.focus();}
+openButton.addEventListener('click',openBoard);
+closeButton.addEventListener('click',closeBoard);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeBoard()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))closeBoard()});
+</script>
+</body>
+</html>
